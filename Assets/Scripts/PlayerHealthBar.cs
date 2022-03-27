@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class SliderChanger : MonoBehaviour
+public class PlayerHealthBar : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private float _seconds;

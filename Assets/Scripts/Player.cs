@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField] private UnityEvent _healthChanged;
 
     private int _health = 100;
+    private int _maximumHealth = 100;
+    private int _minimumHealth = 0;
     private int _healCount = 10;
     private int _damage = 10;
 
@@ -19,19 +21,13 @@ public class Player : MonoBehaviour
 
     public void Heal()
     {
-        if (_health < 100)
-        {
-            _health += _healCount;
-            _healthChanged?.Invoke();
-        }
+        _health = Mathf.Clamp(_health, _minimumHealth, _maximumHealth) + _healCount;
+        _healthChanged?.Invoke();
     }
 
     public void TakeDamage()
     {
-        if (_health > 0)
-        {
-            _health -= _damage;
-            _healthChanged?.Invoke();
-        }
+         _health = Mathf.Clamp(_health, _minimumHealth, _maximumHealth) - _damage;
+        _healthChanged?.Invoke();
     }
 }
