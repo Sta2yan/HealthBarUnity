@@ -4,6 +4,7 @@ using DG.Tweening;
 
 public class SliderChanger : MonoBehaviour
 {
+    [SerializeField] private Player _player;
     [SerializeField] private float _seconds;
 
     private Slider _slider;
@@ -13,8 +14,8 @@ public class SliderChanger : MonoBehaviour
         _slider = GetComponent<Slider>();
     }
 
-    public void UpdateValue(int value)
+    public void UpdateValue()
     {
-        _slider.DOValue(value, _seconds);
+        _slider.DOValue(_player.Health, _seconds);
     }
 }

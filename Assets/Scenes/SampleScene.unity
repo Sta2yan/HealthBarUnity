@@ -638,6 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0b5599ebdd4864e813fc71665abbb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 1053530771}
   _seconds: 0.52
 --- !u!1 &945611805
 GameObject:
@@ -978,8 +979,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7c87b9c28f73444907ec1c3cd60f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 916073517}
-  _health: 100
+  _healthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 916073517}
+        m_TargetAssemblyTypeName: SliderChanger, Assembly-CSharp
+        m_MethodName: UpdateValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1183247051
 GameObject:
   m_ObjectHideFlags: 0
